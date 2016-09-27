@@ -19,5 +19,6 @@ namespace Context
 
         public Product Product { get; set; }
 
+        public List<Product> Products { get; set; }
     }
 }
