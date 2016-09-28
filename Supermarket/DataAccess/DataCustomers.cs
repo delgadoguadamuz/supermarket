@@ -7,7 +7,7 @@ using Context;
 
 namespace DataAccess
 {
-   public class DataCustomers
+    public class DataCustomers
     {
 
         public List<Customer> SelectAll()
@@ -36,20 +36,20 @@ namespace DataAccess
             }
         }
 
-        public List<Customer> SelectByFrom (String Address)
+        public List<Customer> SelectByFrom(String Address)
         {
 
             using (supermarket mySupermarket = new supermarket())
             {
-               List<Customer> customerList = mySupermarket.Customers
+                List<Customer> customerList = mySupermarket.Customers
 
-               .Where(Customer => Customer.Address.Contains(Address))
-               .ToList();
+                .Where(Customer => Customer.Address.Contains(Address))
+                .ToList();
 
                 return customerList;
 
             }
-         }
+        }
 
         public void Insert(Customer pCustomer)
         {
@@ -62,8 +62,8 @@ namespace DataAccess
 
             }
         }
-        
-        public void Update (Customer pCustomer)
+
+        public void Update(Customer pCustomer)
         {
 
 
@@ -85,13 +85,32 @@ namespace DataAccess
                     mySupermarket.SaveChanges();
                 }
             }
+        }
 
+        public void Delete(int pId)
+        {
+            using (supermarket mySupermarket = new supermarket())
+            {
+
+                Customer customerDelete = mySupermarket.Customers
+
+               .Where(Customer => Customer.CustomerId == pId)
+               .SingleOrDefault();
+
+                if (customerDelete != null)
+                {
+
+                    mySupermarket.Customers.Remove(customerDelete);
+                    mySupermarket.SaveChanges();
+
+                }
 
             }
 
+
         }
-     }
 
+    }
 
- 
+}
 
