@@ -49,6 +49,51 @@ namespace DataAccess
             }
         }
 
+        public void Update(Product pProduct)
+        {
 
+
+            using (supermarket mySupermarket = new supermarket())
+            {
+
+                Product productObj = mySupermarket.Products
+
+                .Where(Product => Product.ProductId == pProduct.ProductId)
+                .SingleOrDefault();
+
+                if (productObj != null)
+                {
+                    productObj.Name = pProduct.Name;
+                    productObj.Description = pProduct.Description;
+                    productObj.Price = pProduct.Price;
+                    productObj.Amount = productObj.Amount;
+
+
+                    mySupermarket.SaveChanges();
+                }
+            }
+        }
+
+        public void Delete(int pId)
+        {
+            using (supermarket mySupermarket = new supermarket())
+            {
+
+                Product productDelete = mySupermarket.Products
+
+               .Where(Product => Product.ProductId == pId)
+               .SingleOrDefault();
+
+                if (productDelete != null)
+                {
+
+                    mySupermarket.Products.Remove(productDelete);
+                    mySupermarket.SaveChanges();
+
+                }
+
+            }
+
+        }
     }
 }
