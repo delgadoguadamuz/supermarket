@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Context;
+using DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +15,7 @@ namespace WinInterface
     public partial class SupermarketUI : Form
     {
         private DataTable tablaCustomers;
+        private DataCustomers customerManager;
 
         public SupermarketUI()
         {
@@ -26,6 +29,26 @@ namespace WinInterface
             tablaCustomers.Columns.Add("Address");
             tablaCustomers.Columns.Add("Telephone");
 
+            customerManager = new DataCustomers();
+
         }
+
+        public void loadCustomers()
+        {
+
+            tablaCustomers.Clear();
+            List<Customer> allCustomers = customerManager.SelectAll();
+
+            foreach( DataCustomers currentCustomer in allCustomers)
+            {
+               data
+
+                row["Id"] = currentCustomer.customerId;
+
+            }
+
+
+        }
+
     }
 }

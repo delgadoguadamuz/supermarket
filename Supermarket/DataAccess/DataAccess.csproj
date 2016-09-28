@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="DataCustomers.cs" />
     <Compile Include="DataProducts.cs" />
+    <Compile Include="DataOrders.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
