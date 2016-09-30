@@ -41,8 +41,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tbxAddress = new System.Windows.Forms.TextBox();
             this.Address = new System.Windows.Forms.Label();
-            this.tbxLast = new System.Windows.Forms.TextBox();
-            this.tbxLastname = new System.Windows.Forms.Label();
+            this.tbxLastname = new System.Windows.Forms.TextBox();
+            this.lable1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tbxFirtname = new System.Windows.Forms.TextBox();
             this.tbxCustomerId = new System.Windows.Forms.TextBox();
@@ -75,8 +75,8 @@
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.tbxAddress);
             this.tabPage1.Controls.Add(this.Address);
-            this.tabPage1.Controls.Add(this.tbxLast);
             this.tabPage1.Controls.Add(this.tbxLastname);
+            this.tabPage1.Controls.Add(this.lable1);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.tbxFirtname);
             this.tabPage1.Controls.Add(this.tbxCustomerId);
@@ -197,21 +197,22 @@
             this.Address.TabIndex = 22;
             this.Address.Text = "Address";
             // 
-            // tbxLast
-            // 
-            this.tbxLast.Location = new System.Drawing.Point(610, 133);
-            this.tbxLast.Name = "tbxLast";
-            this.tbxLast.Size = new System.Drawing.Size(240, 20);
-            this.tbxLast.TabIndex = 21;
-            // 
             // tbxLastname
             // 
-            this.tbxLastname.AutoSize = true;
-            this.tbxLastname.Location = new System.Drawing.Point(607, 117);
+            this.tbxLastname.Location = new System.Drawing.Point(610, 133);
             this.tbxLastname.Name = "tbxLastname";
-            this.tbxLastname.Size = new System.Drawing.Size(58, 13);
-            this.tbxLastname.TabIndex = 20;
-            this.tbxLastname.Text = "Last Name";
+            this.tbxLastname.Size = new System.Drawing.Size(240, 20);
+            this.tbxLastname.TabIndex = 21;
+            this.tbxLastname.TextChanged += new System.EventHandler(this.tbxLastname_TextChanged);
+            // 
+            // lable1
+            // 
+            this.lable1.AutoSize = true;
+            this.lable1.Location = new System.Drawing.Point(607, 117);
+            this.lable1.Name = "lable1";
+            this.lable1.Size = new System.Drawing.Size(58, 13);
+            this.lable1.TabIndex = 20;
+            this.lable1.Text = "Last Name";
             // 
             // label3
             // 
@@ -289,8 +290,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbxAddress;
         private System.Windows.Forms.Label Address;
-        private System.Windows.Forms.TextBox tbxLast;
-        private System.Windows.Forms.Label tbxLastname;
+        private System.Windows.Forms.TextBox tbxLastname;
+        private System.Windows.Forms.Label lable1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbxFirtname;
         private System.Windows.Forms.TextBox tbxCustomerId;

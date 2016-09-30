@@ -79,7 +79,19 @@ namespace WinInterface
             objCustomer.Address = tbxAddress.Text;
             objCustomer.Telephone = Convert.ToInt32(tbxTelephone.Text);
 
-            customerManager.Insert(objCustomer);
+            if (objCustomer.CustomerId > 0)
+            {
+
+                customerManager.Update(objCustomer);
+
+            }
+            else
+            {
+                customerManager.Insert(objCustomer);
+
+            }
+
+           
             loadCustomers();
             ClearCustomer();
         }
@@ -128,6 +140,11 @@ namespace WinInterface
                 tbxAddress.Text = Convert.ToString(row["Address"]);
                 tbxTelephone.Text = Convert.ToString(row["Telephone"]);
             }
+        }
+
+        private void tbxLastname_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
