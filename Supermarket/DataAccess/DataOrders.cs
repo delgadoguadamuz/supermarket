@@ -64,7 +64,7 @@ namespace DataAccess
                 if (orderObj != null)
                 {
                     orderObj.OrderDate = pOrder.OrderDate;
-                    orderObj.FistName = pOrder.FistName;
+                   
 
 
                     mySupermarket.SaveChanges();

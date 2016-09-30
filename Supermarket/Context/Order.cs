@@ -13,11 +13,11 @@ namespace Context
 
         public DateTime OrderDate { get; set; }
 
-        public string FistName { get; set; }
+        
 
         public Customer Customer { get; set; }
 
-        public Product Product { get; set; }
+       
 
         public List<Product> Products { get; set; }
     }
